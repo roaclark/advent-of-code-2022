@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $1 in
+  make)
+    folder="day$2"
+    mkdir $folder
+    ;;
+  test)
+    haxe -C "day$2" --main "Test$3" -cp ../ --interp --library utest
+    ;;
+  run)
+    haxe -C "day$2" --main "Solution$3" -cp ../ --interp
+    ;;
+  *)
+    echo "Input command not recognized"
+esac

@@ -1,5 +1,6 @@
 {
   "haxe.configurations": [
+    ["-C template", "../dev.hxml"],
     ["-C day1", "../dev.hxml"],
     ["-C day2", "../dev.hxml"]
   ]

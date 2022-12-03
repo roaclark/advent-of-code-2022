@@ -3,7 +3,7 @@
 case $1 in
   make)
     folder="day$2"
-    mkdir $folder
+    cp -R template $folder
     ;;
   test)
     haxe -C "day$2" --main "Test$3" -cp ../ --interp --library utest

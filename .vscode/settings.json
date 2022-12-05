@@ -1,9 +1,30 @@
 {
   "haxe.configurations": [
     ["-C template", "../dev.hxml"],
-    ["-C day1", "../dev.hxml"],
-    ["-C day2", "../dev.hxml"],
-    ["-C day3", "../dev.hxml"],
-    ["-C day4", "../dev.hxml"]
+    ["-C day01", "../dev.hxml"],
+    ["-C day02", "../dev.hxml"],
+    ["-C day03", "../dev.hxml"],
+    ["-C day04", "../dev.hxml"],
+    ["-C day05", "../dev.hxml"],
+    ["-C day06", "../dev.hxml"],
+    ["-C day07", "../dev.hxml"],
+    ["-C day08", "../dev.hxml"],
+    ["-C day09", "../dev.hxml"],
+    ["-C day10", "../dev.hxml"],
+    ["-C day11", "../dev.hxml"],
+    ["-C day12", "../dev.hxml"],
+    ["-C day13", "../dev.hxml"],
+    ["-C day14", "../dev.hxml"],
+    ["-C day15", "../dev.hxml"],
+    ["-C day16", "../dev.hxml"],
+    ["-C day17", "../dev.hxml"],
+    ["-C day18", "../dev.hxml"],
+    ["-C day19", "../dev.hxml"],
+    ["-C day20", "../dev.hxml"],
+    ["-C day21", "../dev.hxml"],
+    ["-C day22", "../dev.hxml"],
+    ["-C day23", "../dev.hxml"],
+    ["-C day24", "../dev.hxml"],
+    ["-C day25", "../dev.hxml"]
   ]
 }

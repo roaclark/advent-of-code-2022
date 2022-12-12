@@ -1,4 +1,7 @@
 {
+  "haxe.executable": {
+    "path": "haxe"
+  },
   "haxe.configurations": [
     ["-C template", "../dev.hxml"],
     ["-C day01", "../dev.hxml"],

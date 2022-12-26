@@ -3,7 +3,6 @@ package;
 import utest.Assert;
 
 class Test extends utest.Test {
-	// @Ignored
 	function testMain1() {
 		var fileContents = sys.io.File.getContent('input_test1.txt');
 		Assert.equals(26, Solution1.solve(fileContents, 10));

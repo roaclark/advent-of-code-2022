@@ -1,0 +1,5 @@
+-C day01
+--main Test1
+-cp ../
+--interp
+--library utest

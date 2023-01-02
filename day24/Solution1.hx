@@ -84,9 +84,8 @@ class Solution1 {
 		return true;
 	}
 
-	static public function findShortestPath(stormMap:StormMap):Int {
-		var goal:Vector<Int> = Vector.fromArrayCopy([stormMap.height - 1, stormMap.width - 2]);
-		var queue:Array<Vector<Int>> = [Vector.fromArrayCopy([0, 1, 0])];
+	static public function findShortestPath(stormMap:StormMap, start:Vector<Int>, goal:Vector<Int>):Int {
+		var queue:Array<Vector<Int>> = [start];
 		var visited:Map<String, Bool> = [];
 		while (queue.length > 0) {
 			var curr = queue.shift();
@@ -115,7 +114,7 @@ class Solution1 {
 
 	static public function solve(input:String):Int {
 		var stormMap = parseInput(input);
-		return findShortestPath(stormMap);
+		return findShortestPath(stormMap, Vector.fromArrayCopy([0, 1, 0]), Vector.fromArrayCopy([stormMap.height - 1, stormMap.width - 2]));
 	}
 
 	static public function solveFile(filename:String = 'input.txt') {

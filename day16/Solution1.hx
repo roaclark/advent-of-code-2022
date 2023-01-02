@@ -53,8 +53,7 @@ class Solution1 {
 		return distances;
 	}
 
-	static public function maximizePressure(valves:Array<Valve>, distances:Map<String, Map<String, Int>>):Int {
-		var valveTargets = valves.filter(v -> v.rate > 0);
+	static public function maximizePressure(valves:Array<Valve>, distances:Map<String, Map<String, Int>>, time:Int = 30):Int {
 		var best = 0;
 		var queue:Array<SearchNode> = [
 			{
@@ -67,9 +66,9 @@ class Solution1 {
 
 		while (queue.length > 0) {
 			var curr = queue.pop();
-			if (curr.time < 30) {
+			if (curr.time < time) {
 				best = Std.int(Math.max(best, curr.pressure));
-				for (nextValve in valveTargets) {
+				for (nextValve in valves) {
 					if (!curr.open.exists(nextValve.name)) {
 						var timeToOpenNext = distances[curr.valve][nextValve.name] + 1;
 						var nextOpen:Map<String, Bool> = curr.open.copy();
@@ -78,7 +77,7 @@ class Solution1 {
 							valve: nextValve.name,
 							time: curr.time + timeToOpenNext,
 							open: nextOpen,
-							pressure: curr.pressure + (30 - timeToOpenNext - curr.time) * nextValve.rate,
+							pressure: curr.pressure + (time - timeToOpenNext - curr.time) * nextValve.rate,
 						});
 					}
 				}
@@ -91,7 +90,8 @@ class Solution1 {
 	static public function solve(input:String):Int {
 		var valves = parseValves(input);
 		var distances = getAllValveDistances(valves);
-		return maximizePressure(valves, distances);
+		var valveTargets = valves.filter(v -> v.rate > 0);
+		return maximizePressure(valveTargets, distances);
 	}
 
 	static public function solveFile(filename:String = 'input.txt') {
